@@ -1,7 +1,7 @@
 # Bookmark Manager Web App
 require 'sinatra/base'
 
-class Bookmark #< Sinatra::Base
+class Bookmark < Sinatra::Base
 
-run! if app_file == $0
+ run! if app_file == $0
 end
