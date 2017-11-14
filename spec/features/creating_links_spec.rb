@@ -14,6 +14,5 @@
         fill_in :link_url, with: 'www.google.co.uk'
         click_button 'Add Link'
         expect(page).to have_content('Google')
-        destroy_last_entry
       end
 end
