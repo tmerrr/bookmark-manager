@@ -1,4 +1,4 @@
-ENV['RACK_ENV'] ||= 'development'
+# ENV['RACK_ENV'] ||= 'development'
 # Bookmark Manager Web App
 require 'sinatra/base'
 require './models/link'
