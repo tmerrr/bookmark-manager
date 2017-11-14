@@ -8,7 +8,7 @@ configure :development do
 end
 
 configure :production do
-  ENV['']
+  ENV['RACK_ENV'] = 'production'
 end
 
 class Bookmark < Sinatra::Base
