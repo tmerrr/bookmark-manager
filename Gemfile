@@ -8,10 +8,14 @@ gem 'data_mapper'
 gem 'dm-migrations'
 gem 'dm-postgres-adapter'
 gem 'dm-transactions'
-gem 'pg'
 gem 'pry'
 gem 'rack'
 gem 'rspec'
 gem 'rubocop'
 gem 'sinatra'
 gem 'thin'
+gem 'rake'
+
+group :production do
+  gem 'pg'
+end

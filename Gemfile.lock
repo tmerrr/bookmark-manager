@@ -144,6 +144,7 @@ DEPENDENCIES
   pg
   pry
   rack
+  rake
   rspec
   rubocop
   sinatra
