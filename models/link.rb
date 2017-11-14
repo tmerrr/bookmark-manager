@@ -3,8 +3,6 @@ require 'data_mapper'
 require 'dm-migrations'
 require 'dm-postgres-adapter'
 
-DataMapper.setup(:default, 'postgres://localhost/bookmark_manager')
-
 class Link
   include DataMapper::Resource
 
@@ -13,5 +11,6 @@ class Link
   property :url, String
 end
 
-  DataMapper.finalize
-  Link.auto_migrate!
+DataMapper.setup(:default, 'postgres://localhost/bookmark_manager')
+DataMapper.finalize
+Link.auto_upgrade!

@@ -1,4 +1,4 @@
-require 'link'
+require './models/link'
 
 describe Link do
 

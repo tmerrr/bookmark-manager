@@ -1,3 +1,3 @@
-require './server.rb'
+require './app/app.rb'
 
 run Bookmark
