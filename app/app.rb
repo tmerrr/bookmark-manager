@@ -3,6 +3,14 @@ ENV['RACK_ENV'] ||= 'development'
 require 'sinatra/base'
 require './models/link'
 
+configure :development do
+  ENV['RACK_ENV'] = 'development'
+end
+
+configure :production do
+  ENV['']
+end
+
 class Bookmark < Sinatra::Base
 
   get '/' do
