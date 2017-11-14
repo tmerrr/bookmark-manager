@@ -1,4 +1,5 @@
-ENV['RACK_ENV'] = 'TEST'
+ENV['RACK_ENV'] = 'test'
+
 require './models/link'
 require './app/app.rb'
 require 'capybara'
@@ -14,9 +15,9 @@ require './spec/features/web_helpers.rb'
 Capybara.app = Bookmark
 
 RSpec.configure do |config|
-    DataMapper.setup(:default, 'postgres://localhost/bookmark_test')
-    DataMapper.finalize
-    Link.auto_upgrade!
+    # DataMapper.setup(:default, 'postgres://localhost/bookmark_test')
+    # DataMapper.finalize
+    # Link.auto_upgrade!
 
     config.before(:suite) do
       DatabaseCleaner.strategy = :transaction
