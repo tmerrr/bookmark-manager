@@ -6,7 +6,7 @@ require './models/link'
 class Bookmark < Sinatra::Base
 
   get '/' do
-    erb(:index)
+    redirect '/create_link'
   end
 
   get '/links' do
