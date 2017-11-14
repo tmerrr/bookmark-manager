@@ -1,6 +1,4 @@
 # feature tests for Bookmark Manager Index Page
-require 'capybara/rspec'
-
  # Capybara.app = Bookmark
 
 describe 'Bookmark', :type => :feature do
@@ -10,6 +8,7 @@ describe 'Bookmark', :type => :feature do
       Link.create(name: 'Makers', url: 'www.makers.co.uk')
       visit "/links"
       expect(page).to have_content('Makers')
+      Link.last.destroy
     end
   end
 end

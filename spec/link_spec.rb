@@ -10,6 +10,7 @@ describe Link do
     end
     it 'should add a link' do
       expect{ Link.create(name: 'B', url: 'www.b.com')}.to change {Link.all.length}.by(1)
+      Link.last.destroy
     end
   end
 end
