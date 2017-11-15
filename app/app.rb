@@ -1,5 +1,5 @@
 ENV['RACK_ENV'] ||= 'development'
-# Bookmark Manager Web App
+
 require 'sinatra/base'
 require_relative 'datamapper_config'
 
