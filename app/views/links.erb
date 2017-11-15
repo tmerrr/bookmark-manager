@@ -1,7 +1,7 @@
 <html>
   <ul>
     <% @links.each do |link| %>
-    <li> <%= link.name %> </li>
+    <li> <a href="<%= link.url %>"> <%= link.name %> </a> </li>
     <% end %>
   </ul>
 </html>
