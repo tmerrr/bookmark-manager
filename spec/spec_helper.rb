@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
-require './models/link'
+require './app/datamapper_config'
 require './app/app.rb'
 require 'capybara'
 require 'capybara/rspec'
