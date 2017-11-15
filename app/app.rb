@@ -18,6 +18,12 @@ class Bookmark < Sinatra::Base
     erb(:creating_link)
   end
 
+  get '/tags/:tag' do
+    query = params[:tag]
+    @filtered_links = Tag.all(name: query).links
+    erb :filtered_links
+  end
+
   post '/links' do
     link_name = params[:link_name]
     link_url = params[:link_url]

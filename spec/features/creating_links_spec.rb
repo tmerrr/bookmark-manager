@@ -9,19 +9,8 @@
   end
 
   scenario 'link is added' do
-    visit '/create_link'
-    fill_in :link_name, with: 'Google'
-    fill_in :link_url, with: 'www.google.co.uk'
-    fill_in :link_tag, with: 'search'
-    click_button 'Add Link'
-
-    visit '/create_link'
-    fill_in :link_name, with: 'yahoo'
-    fill_in :link_url, with: 'www.yahoo.co.uk'
-    fill_in :link_tag, with: 'search'
-    click_button 'Add Link'
-
-    # p Tag.all(name: 'search').links
+    create_link('Google', 'www.google.co.uk', 'search')
+    create_link('Yahoo', 'www.yahoo.co.uk', 'search')
     last_tag = Link.last.tags.last
     expect(last_tag.name).to eq('search')
     expect(page).to have_content('Google')
