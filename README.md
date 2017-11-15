@@ -1,26 +1,44 @@
 # Bookmark Manager
 
+## Specification:
 
-### It shows a list of links from the database
+* It shows a list of links from the database
+* New links can be added
+* Links can be tagged
+* Links can be filtered by a tag
 
-  As a User
-  So that I can go to websites I use
-  I want to see a list of links on page
+### User Story 1:
 
-### New links can be added
+```
+As a User
+So that I can see my bookmarks
+I want to see a list of saved bookmarks
+```
+BookmarkManager <-- list --> list of saved bookmarks
 
-  As a User
-  So that I can save more content
-  I want to be able to add link to the list
 
-### Links can be tagged
+### User Story 2:
 
-  As a User
-  So that I can identify subjects of the content
-  I want to be able to add tags
+```
+As a User
+So that I can add to my list of bookmarks
+I want to be able to add new bookmarks to the list
+```
+BookmarkManager <-- add --> add a bookmark
 
-### Links can be filtered by a tag
+### User Story 3:
 
-  As a User
-  So that I can select the appropriate content
-  I want to be able to filter by a tag
+```
+As a User
+To make it easier to access my bookmarks
+I want to be able to tag a bookmark
+```
+Bookmark <-- add_tag --> add tag to bookmark
+
+### User Story 4:
+```
+As a User
+So that I can sort through my bookmarks by category
+I want to be able to filter my bookmarks using their tags
+```
+BookmarkManager <-- filter_by_tag --> see a list of bookmarks with given tag
