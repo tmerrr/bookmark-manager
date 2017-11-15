@@ -1,16 +1,31 @@
 ENV['RACK_ENV'] ||= 'development'
 
+require 'bcrypt'
 require 'sinatra/base'
-require_relative 'datamapper_config'
+require_relative 'app_helper'
 
 class Bookmark < Sinatra::Base
 
+  enable :sessions
+  set :session_secret, 'key'
+
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+  end
+
   get '/' do
-    redirect '/create_link'
+    redirect '/user/new'
+  end
+
+  get '/user/new' do
+    erb :signup
   end
 
   get '/links' do
     @links = Link.all
+    # @user = current_user.email if current_user
     erb(:links)
   end
 
@@ -33,6 +48,14 @@ class Bookmark < Sinatra::Base
       link.tags << tag
     end
     link.save
+    redirect '/links'
+  end
+
+  post '/user' do
+    email = params[:email]
+    password = params[:password]
+    user = User.create(email: email, password: password)
+    session[:user_id] = user.id
     redirect '/links'
   end
 

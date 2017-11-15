@@ -1,4 +1,7 @@
 <html>
+<% if current_user %>
+  <h1> Welcome, <%= current_user.email %> </h1>
+<% end %>
   <ul>
     <% @links.each do |link| %>
     <li> <a href="<%= link.url %>"> <%= link.name %> </a> </li>

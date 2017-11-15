@@ -18,6 +18,7 @@
 
   scenario 'can add multiple tags to a bookmark' do
     create_link('Google', 'www.google.co.uk', 'search home')
+    link = Link.last.tags
     visit('/tags/search')
     expect(page).to have_content('Google')
     visit('/tags/home')
