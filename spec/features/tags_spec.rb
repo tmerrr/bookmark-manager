@@ -4,7 +4,6 @@ feature 'Visit a tag name' do
     create_link('Yahoo', 'https://www.yahoo.co.uk', 'search')
     create_link('Amazon', 'https://www.amazon.co.uk', 'bubbles')
     create_link('Ebay', 'https://www.ebay.co.uk', 'bubbles')
-    p Tag.all(name: 'bubbles').links
     visit('/tags/bubbles')
     expect(page).to have_content('Amazon')
     expect(page).to have_content('Ebay')

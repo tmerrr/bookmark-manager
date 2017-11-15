@@ -15,4 +15,12 @@
     expect(last_tag.name).to eq('search')
     expect(page).to have_content('Google')
   end
+
+  scenario 'can add multiple tags to a bookmark' do
+    create_link('Google', 'www.google.co.uk', 'search home')
+    visit('/tags/search')
+    expect(page).to have_content('Google')
+    visit('/tags/home')
+    expect(page).to have_content('Google')
+  end
 end
