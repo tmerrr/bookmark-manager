@@ -32,8 +32,8 @@ class Bookmark < Sinatra::Base
   end
 
   get '/tags/:tag' do
-    query = params[:tag]
-    @filtered_links = Tag.all(name: query).links
+    @query = params[:tag]
+    @filtered_links = Tag.all(name: @query).links
     erb :filtered_links
   end
 

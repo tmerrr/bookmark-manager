@@ -1,7 +1,18 @@
+<!DOCTYPE html>
 <html>
-  <ul>
-    <% @filtered_links.each do |link| %>
-    <li> <a href="<%= link.url %>"> <%= link.name %> </a> </li>
-    <% end %>
-  </ul>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title> Bookmark Manager </title>
+  </head>
+
+  <h1> Links Tagged By: <%= @query %> </h1>
+
+  <body>
+    <ul>
+      <% @filtered_links.each do |link| %>
+      <li> <a href="<%= link.url %>"> <%= link.name %> </a> </li>
+      <% end %>
+    </ul>
+  </body>
 </html>

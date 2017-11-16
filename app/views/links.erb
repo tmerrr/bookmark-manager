@@ -1,10 +1,21 @@
+<!DOCTYPE html>
 <html>
-<% if current_user %>
-  <h1> Welcome, <%= current_user.email %> </h1>
-<% end %>
-  <ul>
-    <% @links.each do |link| %>
-    <li> <a href="<%= link.url %>"> <%= link.name %> </a> </li>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title> Bookmark Manager </title>
+  </head>
+
+  <h1> Your Links </h1>
+
+  <body>
+    <% if current_user %>
+      <h1> Welcome, <%= current_user.email %> </h1>
     <% end %>
-  </ul>
+    <ul>
+      <% @links.each do |link| %>
+      <li> <a href="<%= link.url %>"> <%= link.name %> </a> </li>
+      <% end %>
+    </ul>
+  </body>
 </html>
