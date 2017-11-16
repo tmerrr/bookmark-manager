@@ -5,7 +5,6 @@ require 'sinatra/base'
 require_relative 'app_helper'
 
 class Bookmark < Sinatra::Base
-
   enable :sessions
   set :session_secret, 'key'
 
@@ -25,7 +24,6 @@ class Bookmark < Sinatra::Base
 
   get '/links' do
     @links = Link.all
-    # @user = current_user.email if current_user
     erb(:links)
   end
 
