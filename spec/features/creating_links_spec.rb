@@ -1,6 +1,6 @@
 feature 'creating links' do
   scenario 'user can input a new link' do
-    visit '/create_link'
+    visit '/links/new'
     expect(page).to have_field('link_name')
     expect(page).to have_field('link_url')
     expect(page).to have_field('link_tag')
